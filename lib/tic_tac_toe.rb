@@ -52,14 +52,6 @@ def current_player(board)
   end
 end
 
-def play(board)
-  counter = 0
-  until counter == 9
-    turn(board)
-    counter += 1
-  end
-end
-
 WIN_COMBINATIONS = [
   [0,1,2],
   [3,4,5],
@@ -117,4 +109,22 @@ def winner(board)
   if win_combination = won?(board)
     board[win_combination[0]]
   end
+end
+
+
+def play(board)
+  puts "Please enter 1-9:"
+  input = gets.strip
+  index = input_to_index(input)
+  until over?
+    turn(board)
+  end
+  if won?(board)
+    if winner(board) == "X"
+      puts "Congratulations X"
+    elsif winner(board) == "O"
+      puts "Congratulations O"
+    end
+  elsif draw?(board)
+    puts "Cat's Game!"
 end
