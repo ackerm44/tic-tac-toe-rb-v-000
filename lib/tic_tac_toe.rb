@@ -127,4 +127,5 @@ def play(board)
     end
   elsif draw?(board)
     puts "Cat's Game!"
+  end
 end
