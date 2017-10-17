@@ -113,9 +113,8 @@ end
 
 
 def play(board)
-  turn(board)
-  until over?(board)
-    play(board)
+  while !over?(board)
+    turn(board)
   end
   if won?(board)
     if winner(board) == "X"
