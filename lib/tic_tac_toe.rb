@@ -117,7 +117,7 @@ def play(board)
   input = gets.strip
   index = input_to_index(input)
   until over?
-    turn(board)
+    play(board)
   end
   if won?(board)
     if winner(board) == "X"
