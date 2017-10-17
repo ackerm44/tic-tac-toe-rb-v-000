@@ -116,7 +116,7 @@ def play(board)
   puts "Please enter 1-9:"
   input = gets.strip
   index = input_to_index(input)
-  until over?
+  if !over?
     play(board)
   end
   if won?(board)
