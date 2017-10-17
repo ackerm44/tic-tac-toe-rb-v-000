@@ -100,4 +100,3 @@ def winner(board)
     board[win_combination[0]]
   end
 end
-
